@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "gatsby";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -14,9 +15,17 @@ function NotFoundPage() {
           className="block mx-auto w-1/2"
           src={abductionIllustration}
         />
-        <h2 className="bg-yellow-400 text-2xl font-bold inline-block my-8 p-3">
-          Looks like this page is a ghost that got abducted by aliens...
-        </h2>
+        <div className="bg-yellow-400 my-8 p-3 rounded-md">
+          <p className=" text-xl text-gray-800 font-bold inline-block">
+            Oops, this page is not here ...
+          </p>
+          <p className="text-xl text-gray-800 font-bold inline-block ">
+            Checkout the food and drinks on the &nbsp;
+            <Link className="underline" to="/">
+              home page
+            </Link>
+          </p>
+        </div>
       </div>
     </Layout>
   );

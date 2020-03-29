@@ -2,34 +2,56 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import dogIllustration from "../images/dog-illustration.svg";
 
 function AboutPage() {
   return (
     <Layout>
       <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
+        keywords={[
+          `CantStopDyt`,
+          `Dayton Eats`,
+          `Contributors`,
+          `project details`,
+          `COVID-19`
+        ]}
         title="About"
       />
 
-      <section className="flex flex-col items-center md:flex-row">
-        <div className="md:w-2/3 md:mr-8">
-          <blockquote className="pl-4 font-serif leading-loose text-justify border-l-4 border-gray-900">
-            The point is... to live one&apos;s life in the full complexity of
-            what one is, which is something much darker, more contradictory,
-            more of a maelstrom of impulses and passions, of cruelty, ecstacy,
-            and madness, than is apparent to the civilized being who glides on
-            the surface and fits smoothly into the world.
-          </blockquote>
+      <section className="flex flex-col ">
+        <div className=" w-4/5 md:w-1/2 m-auto">
+          <h2 className="text-2xl font-bold text-gray-800 py-3">
+            About Dayton Eats
+          </h2>
+          <p className="text-gray-800 leading-loose font-medium">
+            Dayton Eats is a guide to allow the community to find information
+            about how to order from their favorite local restaurant, bar, and
+            coffee during the Stay at Home Order.
+          </p>
 
-          <cite className="block mt-4 text-xs font-bold text-right uppercase">
-            – Thomas Nagel
-          </cite>
+          <p className="text-gray-800 leading-loose font-medium pt-2">
+            Currently, the guide only shows a list of business and how to order
+            from them. We are working hard to bring additional features such as:
+            <ul className="list-disc pl-6">
+              <li>Adding your business to the guide</li>
+              <li>
+                Various filter options, to help you find businesses faster
+              </li>
+              <li>A map view</li>
+            </ul>
+          </p>
+          <p className="text-gray-800 leading-loose font-medium pt-2">
+            If there are features that you&apos;d find helpful, feel free to
+            request them on &nbsp;
+            <a
+              className="underline font-bold"
+              href="https://github.com/CantStopDYT/restaurant_guide_frontend/issues"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Github
+            </a>
+          </p>
         </div>
-
-        <figure className="w-2/3 md:w-1/3">
-          <img alt="A dog relaxing" src={dogIllustration} />
-        </figure>
       </section>
     </Layout>
   );

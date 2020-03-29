@@ -65,6 +65,17 @@ function Restaurant() {
             Direct from Restaurant
           </span>
         </div>
+        {/*         
+        <hr className="w-11/12 m-auto" />
+        <div className="px-6 py-4">
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-1">
+            facebook
+          </span>
+          <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-1">
+            instagram
+          </span>
+        </div>
+        */}
       </div>
     </>
   );

@@ -8,8 +8,14 @@ function IndexPage() {
   return (
     <Layout>
       <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title="Home"
+        keywords={[
+          `Dayton`,
+          `Local Restaurants`,
+          `Ordering Guide`,
+          `Food`,
+          `Brewery`
+        ]}
+        title="Food & Drinks Guide"
       />
 
       <section className="text-center flex flex-col sm:flex-row">

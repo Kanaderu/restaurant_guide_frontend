@@ -6,70 +6,63 @@ import SEO from "../components/seo";
 function ContactPage() {
   return (
     <Layout>
-      <SEO
-        keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
-        title="Contact"
-      />
-      <section>
-        <form className="mx-auto md:w-1/2">
-          <p className="mb-8 leading-loose">
-            Here is an example of a form built using the official Tailwind CSS
-            Custom Forms plugin.{` `}
-            <a
-              className="font-bold text-gray-700 no-underline"
-              href="https://github.com/tailwindcss/custom-forms"
-            >
-              Read the docs
-            </a>
-            .
+      <SEO keywords={[`Contact`, `Dayton Eats`]} title="Contact" />
+      <section className="flex, flex-col">
+        <div className=" w-4/5 md:w-1/2 m-auto">
+          <h2 className="text-2xl font-bold text-gray-800 py-4">
+            Contact Dayton Eats
+          </h2>
+          <p className="text-gray-800 leading-loose font-medium">
+            There are several ways to get in contact with Dayton Eats:
+            <ul className="list-disc pl-6">
+              <li>
+                For feature requests use &nbsp;
+                <a
+                  className="underline font-bold"
+                  href="https://github.com/CantStopDYT/restaurant_guide_frontend/issues"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Github
+                </a>
+              </li>
+              <li>
+                Join the discussion and collaboration on &nbsp;
+                <a
+                  className="underline font-bold"
+                  href="https://cantstopdyt.slack.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Slack
+                </a>
+              </li>
+              <li>
+                CanStopDyt on &nbsp;
+                <a
+                  className="underline font-bold"
+                  href="https://twitter.com/cantstopdyt"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Twitter
+                </a>
+              </li>
+              <li>
+                Front-end dev Romeo K. on &nbsp;
+                <a
+                  className="underline font-bold"
+                  href="https://twitter.com/kwiromeo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Twitter
+                </a>
+              </li>
+              <li>Back-end dev David F.</li>
+            </ul>
           </p>
-
-          <label
-            className="block mb-2 text-xs font-bold uppercase"
-            htmlFor="first-name"
-          >
-            First Name
-          </label>
-
-          <input
-            className="w-full mb-6 form-input"
-            id="first-name"
-            placeholder="Bill"
-            type="text"
-          />
-
-          <label
-            className="block mb-2 text-xs font-bold uppercase"
-            htmlFor="last-name"
-          >
-            Last Name
-          </label>
-
-          <input
-            className="w-full mb-6 form-input"
-            id="last-name"
-            placeholder="Murray"
-            type="text"
-          />
-
-          <label
-            className="block mb-2 text-xs font-bold uppercase"
-            htmlFor="message"
-          >
-            Message
-          </label>
-
-          <textarea
-            className="w-full mb-6 form-textarea"
-            id="message"
-            placeholder="Say something..."
-            rows="8"
-          />
-
-          <button className="px-4 py-2 text-sm font-bold text-white bg-gray-700 border-b-4 border-gray-800 rounded hover:border-gray-700 hover:bg-gray-600">
-            Submit
-          </button>
-        </form>
+        </div>
       </section>
     </Layout>
   );

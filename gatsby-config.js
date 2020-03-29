@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Dayton Eats`,
-    description: `Dayton's Guide to ordering local`,
-    author: `cantstopdayt`
+    description: `Dayton's guide to order local during COVID-19`,
+    author: `cantstopdyt`
   },
   plugins: [
     "gatsby-plugin-eslint",
