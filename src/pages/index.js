@@ -12,7 +12,7 @@ function IndexPage() {
         title="Home"
       />
 
-      <section className="text-center flex flex-row">
+      <section className="text-center flex flex-col sm:flex-row">
         <Restaurant />
         <Restaurant />
         <Restaurant />

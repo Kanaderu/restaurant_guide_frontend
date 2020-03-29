@@ -14,3 +14,8 @@
   object-fit: none;
   height: 300px;
 }
+
+.out-icon {
+  height: 0.95rem;
+  width: 0.95rem;
+}
