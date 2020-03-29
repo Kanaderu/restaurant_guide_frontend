@@ -1,0 +1,16 @@
+/* purgecss start ignore */
+@tailwind base;
+@tailwind components;
+/* purgecss end ignore */
+@tailwind utilities;
+
+.food-icon {
+  object-fit: scale-down;
+  height: 28px;
+  width: 28px;
+}
+
+.img-card {
+  object-fit: none;
+  height: 300px;
+}
