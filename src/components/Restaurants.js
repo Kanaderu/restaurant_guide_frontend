@@ -77,11 +77,6 @@ const Restaurants = () => {
           </a>
 
           <div className="px-6 py-4 text-left flex flex-col">
-            <p className="text-gray-700 text-base py-1">
-              <span className="font-semibold">Status: &nbsp;</span>
-              {listing.status}
-            </p>
-
             <a
               className="text-gray-700 text-base py-1 inline-flex items-center transition duration-150 ease-in-out hover:text-gray-600 underline"
               href={listing.menu_url}
@@ -112,6 +107,13 @@ const Restaurants = () => {
                 <span className="font-semibold">Phone: &nbsp;</span>
                 {listing.locations[0].phone_number}
               </a>
+          </div>
+          <hr className="w-11/12 m-auto" />
+          <div className="px-6 py-2 text-left">
+            <p className="text-gray-700 text-base py-1">
+              <span className="font-semibold">Status: &nbsp;</span>
+              {listing.status}
+            </p>
           </div>
           <hr className="w-11/12 m-auto" />
           <div className="px-6 py-2 text-left">
