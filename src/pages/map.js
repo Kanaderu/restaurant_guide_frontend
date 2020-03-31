@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -7,10 +7,11 @@ import GeoJsonRestaurants from "../components/GeoJsonRestaurants";
 
 function AboutPage() {
   const [data, setData] = useState(null);
-
-  fetch('https://csd-restaurants.herokuapp.com/geo_restaurants.geojson')
-  .then(response => response.json())
-  .then(response => setData(response))
+  useEffect(() => {
+    fetch('https://csd-restaurants.herokuapp.com/geo_restaurants.geojson')
+    .then(response => response.json())
+    .then(response => setData(response))
+  }, [])
 
   return (
     <Layout>
