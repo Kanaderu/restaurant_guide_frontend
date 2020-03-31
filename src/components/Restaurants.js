@@ -2,7 +2,7 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
 import linkIcon from "../images/link.png";
-import outIcon from "../images/out.png";
+import angleIcon from "../images/angle-right.svg";
 
 const Restaurants = () => {
   const data = useStaticQuery(graphql`
@@ -78,34 +78,39 @@ const Restaurants = () => {
 
           <div className="px-6 py-4 text-left flex flex-col">
             <a
-              className="text-gray-700 text-base py-1 inline-flex items-center transition duration-150 ease-in-out hover:text-gray-600 underline"
+              className="text-gray-700 text-base py-1 inline-flex items-center transition duration-150 ease-in-out hover:text-gray-600"
               href={listing.menu_url}
               target="_blank"
               rel="noopener noreferrer"
             >
-            <span className="font-semibold">
+            <p className="font-semibold">
               Menu: &nbsp;
-            </span>
-              {/* Web url goes here*/}
-                <div className="flex items-center">
-                  View <img className="out-icon ml-1" src={outIcon} />
-                </div>
-              </a>
+            </p>
+              <p className="flex items-center underline">
+                View <img className="out-icon ml-1" src={angleIcon} />
+              </p>
+            </a>
             <a
-              className="text-gray-700 text-base py-1 inline-flex transition duration-150 ease-in-out hover:text-gray-600 underline"
+              className="text-gray-700 text-base py-1 inline-flex transition duration-150 ease-in-out hover:text-gray-600"
               href={getGoogleMapsDirectionsLink(listing.locations[0])}
               target="_blank"
               rel="noopener noreferrer"
             >
-                <span className="font-semibold">Address: &nbsp;</span>
-                {listing.locations[0].street_address}
+              <p className="font-semibold">Address: &nbsp;</p>
+              <p className="flex items-center underline">
+                {listing.locations[0].street_address} <img className="out-icon ml-1" src={angleIcon} />
+              </p>
+
             </a>
               <a
-              className="text-gray-700 text-base py-1 inline-flex transition duration-150 ease-in-out hover:text-gray-600 underline"
+              className="text-gray-700 text-base py-1 inline-flex transition duration-150 ease-in-out hover:text-gray-600"
                 href={`tel:${listing.locations[0].phone_number}`}
               >
-                <span className="font-semibold">Phone: &nbsp;</span>
-                {listing.locations[0].phone_number}
+                <p className="font-semibold">Phone: &nbsp;</p>
+                  <p className="underline flex items-center">
+                    {listing.locations[0].phone_number}
+                    <img className="out-icon ml-1" src={angleIcon} />
+                  </p>
               </a>
           </div>
           <hr className="w-11/12 m-auto" />
