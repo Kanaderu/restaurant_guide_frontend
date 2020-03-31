@@ -38,24 +38,23 @@ const Restaurants = () => {
       {/*<pre>{JSON.stringify(data, null, 4)}</pre>*/}
       {data.restaurants.listings.map(listing => (
         <div
-          className="w:11/12 sm:w-1/4 rounded m-4 overflow-hidden shadow-lg "
+          className="w:11/12 sm:w-1/4 rounded m-4 overflow-hidden shadow-lg restaurant-card"
           key={listing.name}
         >
-          <div className="bg-gray-300 flex">
-            <h2 className="font-bold text-xl text-center text-gray-800 py-4 px-6 w-4/5">
+          <a
+            href={listing.website_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gray-300 hover:bg-gray-400 flex w-full transition duration-150 ease-in-out"
+          >
+            <h2 className="font-bold text-xl text-left text-gray-800 py-4 px-6 w-4/5">
               {listing.name}
             </h2>
             <span className="w-1/5 my-auto">
-              <a
-                href={listing.website_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
                 {/* Web url goes here*/}
                 <img src={linkIcon} />
-              </a>
             </span>
-          </div>
+          </a>
 
           <div className="px-6 py-4 text-center">
             <p className="text-gray-700 text-base py-1">
