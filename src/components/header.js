@@ -54,6 +54,10 @@ function Header() {
               title: `About`
             },
             {
+              route: `/map`,
+              title: `Map`
+            },
+            {
               route: `/contact`,
               title: `Contact`
             }
