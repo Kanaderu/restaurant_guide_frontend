@@ -33,10 +33,12 @@ const Map = (props) => {
     </div>
   );
 };
+
 Map.propTypes = {
   children: PropsType.node,
   center: PropsType.array,
   zoom: PropsType.number
 };
+
 export default Map;
 export const useMap = () => useContext(MapContext);
