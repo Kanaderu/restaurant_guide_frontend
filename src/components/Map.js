@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect, createContext, useContext }  from 'react';
 import mapboxgl from 'mapbox-gl';
 import PropsType from 'prop-types';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import '../css/map.css';
 
 mapboxgl.accessToken = process.env.GATSBY_MAPBOX_API_TOKEN;
