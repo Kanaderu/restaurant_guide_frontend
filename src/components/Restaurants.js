@@ -52,6 +52,7 @@ const Restaurants = () => {
 
   }
 
+
   return (
     <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center">
       {/*<pre>{JSON.stringify(data, null, 4)}</pre>*/}
@@ -75,42 +76,49 @@ const Restaurants = () => {
             </span>
           </a>
 
-          <div className="px-6 py-4 text-center">
+          <div className="px-6 py-4 text-left">
             <p className="text-gray-700 text-base py-1">
               <span className="font-semibold">Status: &nbsp;</span>
               {listing.status}
             </p>
-            <p className="text-gray-700 text-base flex flex-row py-1">
-              <span className="font-semibold w-1/2 text-right">
-                Menu: &nbsp;
-              </span>
-              <a
-                className="w-1/2 m-auto"
-                href={listing.menu_url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {/* Web url goes here*/}
-                <img className="out-icon" src={outIcon} />
+
+            <a
+              className="text-gray-700 text-base py-1 inline-flex items-center transition duration-150 ease-in-out hover:text-gray-600 underline"
+              href={listing.menu_url}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+            <span className="font-semibold">
+              Menu: &nbsp;
+            </span>
+              {/* Web url goes here*/}
+                <div className="flex items-center">
+                  View <img className="out-icon ml-1" src={outIcon} />
+                </div>
               </a>
-            </p>
-            <p className="text-gray-700 text-base py-1">
-              <span className="font-semibold">Address: &nbsp;</span>
-              {listing.locations[0].street_address}
-            </p>
-            <p className="text-gray-700 text-base py-1">
-              <span className="font-semibold">Phone: &nbsp;</span>
-              <a href={`tel:${listing.locations[0].phone_number}`}>
+            <a
+              className="text-gray-700 text-base py-1 inline-flex transition duration-150 ease-in-out hover:text-gray-600 underline"
+              href={getGoogleMapsDirectionsLink(listing.locations[0])}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+                <span className="font-semibold">Address: &nbsp;</span>
+                {listing.locations[0].street_address}
+            </a>
+              <a
+              className="text-gray-700 text-base py-1 inline-flex transition duration-150 ease-in-out hover:text-gray-600 underline"
+                href={`tel:${listing.locations[0].phone_number}`}
+              >
+                <span className="font-semibold">Phone: &nbsp;</span>
                 {listing.locations[0].phone_number}
               </a>
-            </p>
           </div>
           <hr className="w-11/12 m-auto" />
-          <div className="px-6 py-2">
-            <p className="text-gray-700 text-base font-semibold pb-2">Order</p>
+          <div className="px-6 py-2 text-left">
+            <p className="text-gray-700 text-sm font-semibold pb-2">Order</p>
             {listing.order_methods.map(method => (
               <span
-                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-1"
+                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 m-1"
                 key={method}
               >
                 {method}
@@ -118,13 +126,13 @@ const Restaurants = () => {
             ))}
           </div>
           <hr className="w-11/12 m-auto" />
-          <div className="px-6 py-2">
-            <p className="text-gray-700 text-base font-semibold pb-2">
+          <div className="px-6 py-2 text-left">
+            <p className="text-gray-700 text-sm font-semibold pb-2">
               Delivery | Pickup
             </p>
             {listing.delivery_options.map(option => (
               <span
-                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-1"
+                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 m-1"
                 key={option}
               >
                 {option}
@@ -133,14 +141,14 @@ const Restaurants = () => {
 
             {listing.pickup_options.map(option => (
               <span
-                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-1"
+                className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm text-gray-700 m-1"
                 key={option}
               >
                 {option}
               </span>
             ))}
           </div>
-          {/*         
+          {/*
               <hr className="w-11/12 m-auto" />
               <div className="px-6 py-4">
                 <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 m-1">
