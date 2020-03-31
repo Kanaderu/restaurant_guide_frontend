@@ -2,7 +2,7 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-import Restaurant from "../components/Restaurant";
+import Restaurants from "../components/Restaurants";
 
 function IndexPage() {
   return (
@@ -18,10 +18,8 @@ function IndexPage() {
         title="Food & Drinks Guide"
       />
 
-      <section className="text-center flex flex-col sm:flex-row">
-        <Restaurant />
-        <Restaurant />
-        <Restaurant />
+      <section className="text-center flex flex-wrap">
+        <Restaurants />
       </section>
     </Layout>
   );
