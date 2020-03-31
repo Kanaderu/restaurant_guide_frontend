@@ -115,7 +115,7 @@ const Restaurants = () => {
           </div>
           <hr className="w-11/12 m-auto" />
           <div className="px-6 py-2 text-left">
-            <p className="text-gray-700 text-base py-1">
+            <p className="text-gray-700 text-sm py-1">
               <span className="font-semibold">Status: &nbsp;</span>
               {listing.status}
             </p>
