@@ -3,7 +3,7 @@ import mapboxgl from 'mapbox-gl';
 import PropsType from 'prop-types';
 import '../css/map.css';
 
-mapboxgl.accessToken = process.env.MAPBOX_API_TOKEN;
+mapboxgl.accessToken = process.env.GATSBY_MAPBOX_API_TOKEN;
 
 const MapContext = createContext(undefined);
 
