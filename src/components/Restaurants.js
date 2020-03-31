@@ -76,7 +76,7 @@ const Restaurants = () => {
             </span>
           </a>
 
-          <div className="px-6 py-4 text-left">
+          <div className="px-6 py-4 text-left flex flex-col">
             <p className="text-gray-700 text-base py-1">
               <span className="font-semibold">Status: &nbsp;</span>
               {listing.status}
