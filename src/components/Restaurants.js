@@ -33,6 +33,25 @@ const Restaurants = () => {
     }
   `);
 
+  /**
+   * Format the address and prepare it for "Open in Google Maps" Directions link.
+   *
+   * @param {object} location The location information for a restaurant
+   * @returns {string} A properly formatted Google Directions link.
+   */
+  const getGoogleMapsDirectionsLink =  ( location ) => {
+
+    const { city, street_address, zipcode } = location;
+    const formattedAddress = `${street_address}, ${city}, Ohio ${zipcode}`;
+
+    // Google Maps URL generated from following docs: https://developers.google.com/maps/documentation/urls/guide
+    const encodedAddress = formattedAddress.replace(new RegExp(/ /g), '+');
+    const link = `https://www.google.com/maps/dir/?api=1&destination=${encodedAddress}`;
+
+    return link;
+
+  }
+
   return (
     <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center">
       {/*<pre>{JSON.stringify(data, null, 4)}</pre>*/}
