@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import mapboxgl from "mapbox-gl";
 import { useMap } from './Map';
 
 function GeoJsonRestaurants(props) {
@@ -22,6 +23,39 @@ function GeoJsonRestaurants(props) {
         'icon-allow-overlap': true
       }
     })
+
+    map.on('click', 'restaurants-layer', function(e) {
+      var coordinates = e.features[0].geometry.coordinates.slice();
+      var restaurant = JSON.parse(e.features[0].properties.restaurant)
+
+      var renderHtml = restaurant.name + '<br/>' +
+                       restaurant.status + '<br/>' +
+                       restaurant.website_url + '<br/>' +
+                       restaurant.menu_url + '<br/>' +
+                       restaurant.order_methods
+
+      // Ensure that if the map is zoomed out such that multiple
+      // copies of the feature are visible, the popup appears
+      // over the copy being pointed to.
+      while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+        coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+      }
+
+      new mapboxgl.Popup()
+        .setLngLat(coordinates)
+        .setHTML(renderHtml)
+        .addTo(map);
+    });
+
+    // Change the cursor to a pointer when the mouse is over the places layer.
+    map.on('mouseenter', 'restaurants-layer', function() {
+    map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'restaurants-layer', function() {
+    map.getCanvas().style.cursor = '';
+    });
 
     return () => {
       map.removeLayer('restaurants-layer')
