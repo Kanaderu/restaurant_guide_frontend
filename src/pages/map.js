@@ -9,7 +9,7 @@ function MapPage() {
   const [data, setData] = useState(null);
   useEffect(() => {
     // TODO: Make this a static fetch during build-time?
-    fetch("https://csd-restaurants.herokuapp.com/geo_restaurants.geojson")
+    fetch("https://csd-restaurants.herokuapp.com/locations/?format=json")
       .then(response => response.json())
       .then(response => setData(response));
   }, []);
