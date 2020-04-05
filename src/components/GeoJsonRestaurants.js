@@ -15,11 +15,12 @@ function GeoJsonRestaurants(props) {
 
     map.addLayer({
       id: 'restaurants-layer',
-      type: 'circle',
+      type: 'symbol',
       source: 'restaurants-source',
-      paint: {
-        'circle-color': 'black',
-      },
+      layout: {
+        'icon-image': 'restaurant-15',
+        'icon-allow-overlap': true
+      }
     })
 
     return () => {
