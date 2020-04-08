@@ -1,4 +1,5 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
+import PropsType from "prop-types";
 import mapboxgl from "mapbox-gl";
 import { useMap } from './Map';
 
@@ -67,7 +68,26 @@ function GeoJsonRestaurants(props) {
     map.getSource('restaurants-source').setData(props.geojson)
   }, [props.geojson])
 
-  return null
+  return (
+    <div className="map-overlay top">
+        <div className="map-overlay-inner">
+            <fieldset>
+                <label htmlFor="map-search">Search Restaurant</label>
+                <input type="text" placeholder="Name"></input>
+            </fieldset>
+            <fieldset>
+                <label htmlFor="map-filter">Filters</label>
+                  <input type="checkbox" value="carry-out" /> Carry-Out<br/>
+                  <input type="checkbox" value="delivery" /> Delivery<br/>
+                  <div id="swatches"></div>
+            </fieldset>
+        </div>
+    </div>
+  );
 }
+
+GeoJsonRestaurants.propTypes = {
+  geojson: PropsType.node
+};
 
 export default GeoJsonRestaurants
